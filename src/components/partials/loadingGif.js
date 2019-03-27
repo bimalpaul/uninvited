@@ -1,5 +1,4 @@
 import React from 'react';
-import { loaderPath } from "../../config";
 
 export default props => 
-    <img src={loaderPath} alt="img" />
+    <img src={props.gifPath} alt="img" />
