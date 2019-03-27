@@ -1,7 +1,9 @@
 import React from 'react';
 import Friend from './friend';
-export default class extends React.Component {
-    friendComponents = this.props.friendList.map(friend => {
+import withLoader from '../higher-order-components/withLoader';
+
+const friends = props => {
+    const friendComponents = props.friendList.map(friend => {
         return (
             <div className="friend-name" key={friend.username}>
                 <Friend {...friend}/>
@@ -9,12 +11,13 @@ export default class extends React.Component {
         );
     });
 
-    render() {
-        return (
-            <div className="friends-wrapper">
-                <h1 className="header">Friends</h1>
-                <div>{this.friendComponents}</div>
-            </div>
-        );
-    }
+    return (
+        <div className="friends-wrapper">
+            <h1 className="header">Friends</h1>
+            <div>{friendComponents}</div>
+        </div>
+    );
+    
 }
+
+export default withLoader(friends);

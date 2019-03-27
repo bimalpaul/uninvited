@@ -3,12 +3,7 @@ import './invite.css';
 import InvitedGuests from '../partials/invitedGuests';
 import Friends from '../partials/friends';
 import { usersEndpoint } from '../../config';
-import withLoader from '../higher-order-components/withLoader';
 import { loaderPath1, loaderPath2 } from "../../config";
-
-
-const InvitedListWithLoader = withLoader(InvitedGuests);
-const FriendsWithLoader = withLoader(Friends);
 
 export default class InvitePage extends React.Component {
     state = {
@@ -31,10 +26,10 @@ export default class InvitePage extends React.Component {
             <div className="invite-page">
                 <div className="page-header">Guest List</div>
                 <div className="invited-guests">
-                        <InvitedListWithLoader loaded={this.state.isDataLoaded} gifPath={loaderPath1}/>
+                        <InvitedGuests loaded={this.state.isDataLoaded} gifPath={loaderPath1}/>
                     </div>
                     <div className="friends">
-                        <FriendsWithLoader loaded={this.state.isDataLoaded} friendList={this.state.friendList} gifPath={loaderPath2}/>
+                        <Friends loaded={this.state.isDataLoaded} friendList={this.state.friendList} gifPath={loaderPath2}/>
                     </div>
             </div>
         );     
