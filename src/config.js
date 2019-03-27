@@ -1,4 +1,4 @@
-export const loaderPath = "loader.gif";
+export const loaderPath = "loading.gif";
 
-export const usersEndpoint = "https://jsonplaceholder.typicode.com/users";
+export const usersEndpoint = "https://users-for-training.free.beeceptor.com/";
 
