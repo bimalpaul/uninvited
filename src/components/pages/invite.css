@@ -1,0 +1,61 @@
+.page-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.header {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.invited-guests {
+    margin-top: 20px;
+    border: 2px solid black;
+    height: 500px;
+    width: 500px;
+    overflow-y: scroll;
+}
+
+.friends {
+    margin-top: 20px;
+    border: 2px solid black;
+    height: 500px;
+    width: 500px;
+    overflow-y: scroll;
+}
+
+.friend-name {
+    color: blue;
+    margin : 10px;
+}
+
+.active {
+    background: black;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.inactive {
+    background: white;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.bestQuality {
+    font-size: 16px;
+    color: yellow;
+}
