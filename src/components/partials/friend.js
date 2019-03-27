@@ -22,7 +22,7 @@ export default class extends React.Component {
                 onMouseOver={this.toggleHighlight} 
                 onMouseOut={this.toggleHighlight}>
                     <div>{this.props.username}</div>
-                    <div className={this.state.isActive ? 'show bestQuality ' : 'hide'}>{this.props.name}</div>
+                    <div className={this.state.isActive ? 'show fullname ' : 'hide'}>{this.props.name}</div>
             </div>
         );
     }
