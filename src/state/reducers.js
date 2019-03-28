@@ -23,7 +23,7 @@ const friendList =  (state = initialState.friendList, action) => {
         case actionTypes.FRIENDS_LOADED : 
             return action.payload;
         case actionTypes.FRIEND_SELECTED :
-            const newState =  state.filter(s => s.name !== action.payload.name);
+            const newState =  state.filter(s => s.id !== action.payload.id);
             return newState;
         case actionTypes.FRIEND_UNSELECTED :
             return [...state, action.payload];
@@ -46,7 +46,7 @@ const invitedFriends = (state = initialState.invitedFriends, action) => {
         case actionTypes.FRIEND_SELECTED :
             return [...state, action.payload];
         case actionTypes.FRIEND_UNSELECTED :
-            const newState =  state.filter(s => s.name !== action.payload.name);
+            const newState =  state.filter(s => s.id !== action.payload.id);
             return newState;     
         default:
             return state;    
