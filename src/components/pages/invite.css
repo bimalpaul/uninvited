@@ -15,16 +15,16 @@
 .invited-guests {
     margin-top: 20px;
     border: 2px solid black;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     overflow-y: scroll;
 }
 
 .friends {
     margin-top: 20px;
     border: 2px solid black;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     overflow-y: scroll;
 }
 
