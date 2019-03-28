@@ -6,7 +6,7 @@ const friends = props => {
     const friendComponents = props.friendList.map(friend => {
         return (
             <div className="friend-name" key={friend.username}>
-                <Friend {...friend}/>
+                <Friend {...friend} dispatch={props.dispatch}/>
             </div>
         );
     });
@@ -17,7 +17,6 @@ const friends = props => {
             <div>{friendComponents}</div>
         </div>
     );
-    
 }
 
 export default withLoader(friends);

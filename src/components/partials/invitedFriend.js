@@ -8,7 +8,7 @@ export default class extends React.Component {
             isActive: false
         };
         this.toggleHighlight = this.toggleHighlight.bind(this);
-        this.friendClickHandler = this.friendClickHandler.bind(this);
+        this.guestClickHandler = this.guestClickHandler.bind(this);
     }
 
     toggleHighlight(e) {
@@ -17,11 +17,11 @@ export default class extends React.Component {
        });
     }
 
-    friendClickHandler(e) {
+    guestClickHandler(e) {
         this.props.dispatch({
-            type: actionTypes.FRIEND_SELECTED,
+            type: actionTypes.FRIEND_UNSELECTED,
             payload: this.props
-        })
+        });
     }
 
     render() {
@@ -30,7 +30,7 @@ export default class extends React.Component {
             <div className={toggleClass}
                 onMouseOver={this.toggleHighlight} 
                 onMouseOut={this.toggleHighlight}
-                onClick={this.friendClickHandler}>
+                onClick={this.guestClickHandler}>
                     <div>{this.props.username}</div>
                     <div className={this.state.isActive ? 'show fullname ' : 'hide'}>{this.props.name}</div>
             </div>
