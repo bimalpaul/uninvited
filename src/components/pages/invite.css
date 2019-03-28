@@ -36,14 +36,14 @@
 .active {
     background: black;
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     cursor: pointer;
 }
 
 .inactive {
     background: white;
     color: black;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
 }
 
