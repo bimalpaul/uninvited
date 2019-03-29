@@ -18,6 +18,7 @@
     height: 400px;
     width: 400px;
     overflow-y: scroll;
+    resize: both;
     background: lightgoldenrodyellow;
 }
 
@@ -27,6 +28,7 @@
     height: 400px;
     width: 400px;
     overflow-y: scroll;
+    resize: both;
     background: lightcyan;
 }
 
@@ -41,6 +43,7 @@
     font-size: 30px;
     cursor: pointer;
 }
+
 
 .inactive {
     color: black;
@@ -59,4 +62,12 @@
 .fullname {
     font-size: 16px;
     color: yellow;
+}
+
+.friend-name {
+    color: green;
+}
+
+.friend-city {
+    color: blueviolet;
 }
