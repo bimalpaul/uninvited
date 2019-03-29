@@ -4,57 +4,64 @@ import InvitedGuests from '../partials/invitedGuests';
 import Friends from '../partials/friends';
 import { usersEndpoint } from '../../config';
 import { loaderPath1, loaderPath2 } from "../../config";
-import store from '../../state/store';
 import actionTypes from '../../state/actionTypes';
-
-export default class InvitePage extends React.Component {
-
-    state = store.getState();
+import { connect } from 'react-redux';
+class InvitePage extends React.Component {
 
     componentDidMount() {
-
-        this.unsubscribe = store.subscribe(() => {
-            this.setState(store.getState());
-        });
-
         fetch(usersEndpoint)
             .then(res => res.json())
-            .then(jsonResponse => {
-                store.dispatch({
-                    type: actionTypes.FRIENDS_LOADED,
-                    payload: jsonResponse
-                });
-            });
-
-        store.dispatch({
-            type: actionTypes.FRIENDS_LOADING
-        });    
-    }
-
-    componentWillUnmount() {
-        this.unsubscribe();
+            .then(this.props.onFetchResolve);  
+        this.props.onFetchStart();    
     }
 
     render () {
         return (
             <div className="invite-page">
-                <div className="page-header">Guest List</div>
+                <h2 className="page-header">Guest List</h2>
                 <div className="invited-guests">
                         <InvitedGuests 
-                            loaded={this.state.isDataLoaded} 
+                            loaded={this.props.isDataLoaded} 
                             gifPath={loaderPath1} 
-                            dispatch={store.dispatch.bind(store)}
-                            invitedFriends={this.state.invitedFriends}/>
+                            />
                     </div>
                     <div className="friends">
                         <Friends 
-                            loaded={this.state.isDataLoaded} 
-                            friendList={this.state.friendList} 
+                            loaded={this.props.isDataLoaded} 
                             gifPath={loaderPath2} 
-                            dispatch={store.dispatch.bind(store)}/>
+                            />
                     </div>
             </div>
         );     
     };
 }
+
+const mapStateToProps = state => {
+    return {
+        isDataLoaded: state.isDataLoaded
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onFetchStart: () => {
+            dispatch({
+                type: actionTypes.FRIENDS_LOADING
+            });
+        },
+        onFetchResolve: jsonResponse => {
+            dispatch({
+                type: actionTypes.FRIENDS_LOADED,
+                payload: jsonResponse
+            });
+        }
+    };
+}
+
+const ConnectedPage = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(InvitePage);
+
+export default ConnectedPage;
 

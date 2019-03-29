@@ -15,8 +15,8 @@
 .invited-guests {
     margin-top: 20px;
     border: 2px solid black;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     overflow-y: scroll;
     background: lightgoldenrodyellow;
 }
@@ -24,8 +24,8 @@
 .friends {
     margin-top: 20px;
     border: 2px solid black;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     overflow-y: scroll;
     background: lightcyan;
 }
@@ -38,13 +38,13 @@
 .active {
     background: black;
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     cursor: pointer;
 }
 
 .inactive {
     color: black;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
 }
 

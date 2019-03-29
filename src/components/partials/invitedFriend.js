@@ -1,7 +1,7 @@
 import React from 'react';
 import actionTypes from '../../state/actionTypes';
-
-export default class extends React.Component {
+import { connect } from 'react-redux';
+class invitedFriend extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -18,10 +18,7 @@ export default class extends React.Component {
     }
 
     guestClickHandler(e) {
-        this.props.dispatch({
-            type: actionTypes.FRIEND_UNSELECTED,
-            payload: this.props
-        });
+        this.props.dispatchClick();
     }
 
     render() {
@@ -37,3 +34,16 @@ export default class extends React.Component {
         );
     }
 }
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        dispatchClick: () => {
+            dispatch({
+                type: actionTypes.FRIEND_UNSELECTED,
+                payload: ownProps
+            })
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(invitedFriend);
