@@ -12,6 +12,7 @@ const invitedGuests = props => {
             </div>
         );
     }
+    
     const invitedFriendComponents = props.invitedFriends.map(friend => 
         <div className="friend-name" key={friend.id}>
             <InvitedFriend {...friend} />

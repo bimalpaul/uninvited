@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import actionTypes from '../../state/actionTypes';
 import { connect } from 'react-redux';
+import toggle from '../../hooks/toggle';
 
 const invitedFriend = props => {
-    const [isActive, setIsActive]  = useState(false);
+    const [isActive, setIsActive]  = toggle(false);
     const toggleHighlight = () => setIsActive(!isActive);
     const toggleClass = isActive ? 'active' : 'inactive';
     return (
