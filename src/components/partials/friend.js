@@ -12,7 +12,10 @@ const friend = props => {
             onMouseOut={toggleHighlight}
             onClick={props.onFriendClick}>
                 <div>{props.username}</div>
-                <div className={isActive ? 'show fullname ' : 'hide'}>{props.name}</div>
+                <div className={isActive ? 'show fullname ' : 'hide'}>
+                    <span className="friend-name">{props.name}</span>from
+                    <span className="friend-city"> {props.address.city}</span>
+                </div>
         </div>
     );
 };

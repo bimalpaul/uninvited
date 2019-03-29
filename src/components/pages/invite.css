@@ -54,3 +54,11 @@
     font-size: 16px;
     color: yellow;
 }
+
+.friend-name {
+    color: green;
+}
+
+.friend-city {
+    color: blueviolet;
+}
