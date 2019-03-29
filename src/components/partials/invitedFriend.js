@@ -10,22 +10,22 @@ const invitedFriend = props => {
         <div className={toggleClass}
             onMouseOver={toggleHighlight} 
             onMouseOut={toggleHighlight}
-            onClick={props.dispatchClick}>
+            onClick={props.onInvitedFriendClick}>
                 <div>{props.username}</div>
                 <div className={isActive ? 'show fullname ' : 'hide'}>{props.name}</div>
         </div>
     );
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        dispatchClick: () => {
+        onInvitedFriendClick: () => {
             dispatch({
                 type: actionTypes.FRIEND_UNSELECTED,
                 payload: ownProps
             })
         }
     }
-}
+};
 
 export default connect(null, mapDispatchToProps)(invitedFriend);

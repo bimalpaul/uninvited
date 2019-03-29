@@ -24,12 +24,12 @@ const invitedGuests = props => {
             <div>{invitedFriendComponents}</div>
         </div>
     );
-}
+};
 
 const mapStateToProps = state => {
     return {
         invitedFriends: state.invitedFriends
     };
-}
+};
 
 export default connect(mapStateToProps)(withLoader(invitedGuests));

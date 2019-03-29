@@ -18,6 +18,7 @@
     height: 400px;
     width: 400px;
     overflow-y: scroll;
+    resize: both;
 }
 
 .friends {
@@ -26,6 +27,7 @@
     height: 400px;
     width: 400px;
     overflow-y: scroll;
+    resize: both;
 }
 
 .friend-name {
@@ -37,13 +39,6 @@
     background: black;
     color: white;
     font-size: 30px;
-    cursor: pointer;
-}
-
-.inactive {
-    background: white;
-    color: black;
-    font-size: 14px;
     cursor: pointer;
 }
 

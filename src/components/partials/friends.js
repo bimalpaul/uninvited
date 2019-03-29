@@ -27,7 +27,7 @@ const friends = props => {
             <div>{friendComponents}</div>
         </div>
     );
-}
+};
 
 
 export default connect(state => {
