@@ -1,38 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import actionTypes from '../../state/actionTypes';
 import { connect } from 'react-redux';
-class friend extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            isActive: false
-        };
-        this.toggleHighlight = this.toggleHighlight.bind(this);
-        this.friendClickHandler = this.friendClickHandler.bind(this);
-    }
 
-    toggleHighlight(e) {
-       this.setState({
-           isActive: !this.state.isActive
-       });
-    }
-
-    friendClickHandler(e) {
-        this.props.dispatchClick();
-    }
-
-    render() {
-        const toggleClass = this.state.isActive ? 'active' : 'inactive';
-        return (
-            <div className={toggleClass}
-                onMouseOver={this.toggleHighlight} 
-                onMouseOut={this.toggleHighlight}
-                onClick={this.friendClickHandler}>
-                    <div>{this.props.username}</div>
-                    <div className={this.state.isActive ? 'show fullname ' : 'hide'}>{this.props.name}</div>
-            </div>
-        );
-    }
+const friend = props => {
+    const [isActive, setIsActive]  = useState(false);
+    const toggleHighlight = () => setIsActive(!isActive);
+    const toggleClass = isActive ? 'active' : 'inactive';
+    return (
+        <div className={toggleClass}
+            onMouseOver={toggleHighlight} 
+            onMouseOut={toggleHighlight}
+            onClick={props.dispatchClick}>
+                <div>{props.username}</div>
+                <div className={isActive ? 'show fullname ' : 'hide'}>{props.name}</div>
+        </div>
+    );
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
