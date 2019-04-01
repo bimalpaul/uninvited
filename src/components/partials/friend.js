@@ -8,7 +8,7 @@ const friend = props => {
     const toggleHighlight = () => setIsActive(!isActive);
     const toggleClass = isActive ? 'active' : 'inactive';
     return (
-        <div className={toggleClass}
+        <div className={`${toggleClass} happy-face`}
             onMouseOver={toggleHighlight} 
             onMouseOut={toggleHighlight}
             onClick={props.onFriendClick}>
